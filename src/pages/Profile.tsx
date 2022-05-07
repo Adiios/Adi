@@ -2,6 +2,10 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { useMoralis } from "react-moralis";
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 
 
 const Profile = () => {
@@ -22,6 +26,18 @@ const Profile = () => {
 
     console.log("logged out");
   };
+
+  function VerifyPhoneNumber() {
+    // `value` will be the parsed phone number in E.164 format.
+    // Example: "+12133734253".
+    const [value, setValue] = useState()
+    return (
+      <PhoneInput
+        placeholder="Enter phone number"
+        value={value}
+        onChange={logOut}/>
+    )
+  }
 
   return (
     <div>

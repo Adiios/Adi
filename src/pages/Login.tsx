@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import logo from "../adi.png";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useMoralis } from "react-moralis";
 import { useNavigate } from "react-router-dom";
@@ -39,23 +39,30 @@ const Login = () =>{
   //   }
 
   return (
-    <div className="container"
-    style={{ height: "auto", position: "relative" }}>
-      <div style={{margin: 0, position: "absolute", top:"50%"}}>
-        <header>
-          <Card.Img className= "container" variant="top" src={logo} />
-        </header>
-        <div className="col-md-12 text-center ">
-          <Button variant="dark" onClick={logIn}>
-            Connect to Metamask Wallet
-          </Button>
-          <br></br>
-          <br></br>
-
-          
+    <body style={{height: "865px", width:"800",background: "#000"}}>
+      <div className="container" style={{ height: "300px", position: "relative" }}>
+        <div style={{margin: 0, position: "absolute", top:"50%"}}>
+          <header>
+            <Card className='w-25 p-3 col-md-12 d-flex align-items-center text-center container justify-content-center' style={{ width: '20rem'}}>
+              <Image className='container' src={logo}/>
+              <br></br>
+              <br></br>
+              <br></br>
+              <Card.Body>
+                <Card.Text>Welcome to the future of profiling...</Card.Text>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Button variant="outline-dark" onClick={logIn}>Sign In</Button>
+                <br></br>
+                <br></br>
+                <Button variant="outline-dark" onClick={logout}>Logout</Button>
+              </Card.Body>
+            </Card>
+          </header>
         </div>
       </div>
-    </div>
+    </body>
   );
 }
 
