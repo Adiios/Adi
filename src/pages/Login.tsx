@@ -7,8 +7,15 @@ import { useNavigate } from "react-router-dom";
 
 
 const Login = () =>{
+
+  const serverUrl = "https://hs6w0n7iarfq.usemoralis.com:2053/server";
+  const appId = "amGv22k3HZiLeccIjI5OKnpSMqmMEzWAx3CWLnWK";
+
+  //Moralis.start({ serverUrl, appId });
+
   const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
   const navigate = useNavigate();
+
   useEffect(() => {
     if (isAuthenticated) {
       navigate('/profile');
@@ -39,6 +46,7 @@ const Login = () =>{
   //   }
 
   return (
+    
     <body style={{height: "865px", width:"800",background: "#000"}}>
       <div className="container" style={{ height: "300px", position: "relative" }}>
         <div style={{margin: 0, position: "absolute", top:"50%"}}>
